@@ -1,0 +1,21 @@
+---
+import { thinkings } from '../../data/thinkings';
+import ThinkingsLayout from '../../layouts/ThinkingsLayout.astro';
+import SpecialLayout from '../../layouts/SpecialLayout.astro';
+
+export async function getStaticPaths() {
+  return thinkings.map((thinking) => ({
+    params: { slug: thinking.slug },
+    props: { ...thinking, thinkings }, // Pass all properties, including thinkings and paragraphs
+  }));
+}
+
+const { title, paragraphs, layout = 'default', thinkings } = Astro.props;
+
+// Dynamically select the layout
+const SelectedLayout = layout === 'special' ? SpecialLayout : ThinkingsLayout;
+---
+
+<SelectedLayout thinkings={thinkings} title={title} paragraphs={paragraphs}>
+  <!-- Additional slot content if needed -->
+</SelectedLayout>

@@ -1,0 +1,49 @@
+---
+const { thinkings = [] } = Astro.props; // Default to an empty array if thinkings is undefined
+---
+
+<div class="relative">
+  <!-- Dropdown Button -->
+  <button 
+    id="dropdownButton"
+    class="bg-pink-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-pink-600"
+  >
+    Browse Thinkings
+  </button>
+  <!-- Dropdown Menu -->
+  <div 
+    id="dropdownMenu"
+    class="hidden absolute mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-10"
+  >
+    <ul class="divide-y divide-gray-200">
+      {thinkings.map((thinking) => (
+        <li>
+          <a 
+            href={`/thinkings/${thinking.slug}`} 
+            class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+          >
+            {thinking.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdownButton = document.getElementById('dropdownButton');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+
+      dropdownButton.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hidden');
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+          dropdownMenu.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</div>

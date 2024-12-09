@@ -1,0 +1,36 @@
+---
+const currentPage = Astro.url.pathname; // Determines the current page
+---
+
+<header class="sticky top-4 z-50 mx-auto max-w-6xl rounded-lg shadow-lg">
+  <!-- Top part with navigation links -->
+  <div class="bg-pink-200 text-gray-800 shadow-md px-6 py-4 rounded-t-lg">
+    <nav class="flex justify-center space-x-4">
+      <a 
+        href="/about-me" 
+        class={`px-4 py-2 rounded-md font-medium transition ${
+          currentPage === '/about-me' ? 'bg-pink-500 text-white' : 'bg-pink-300 hover:bg-pink-400 text-gray-800'
+        }`}>
+        About Me
+      </a>
+      <a 
+        href="/thinkings" 
+        class={`px-4 py-2 rounded-md font-medium transition ${
+          currentPage === '/thinkings' ? 'bg-pink-500 text-white' : 'bg-pink-300 hover:bg-pink-400 text-gray-800'
+        }`}>
+        Thinkings
+      </a>
+      <a 
+        href="/recipes" 
+        class={`px-4 py-2 rounded-md font-medium transition ${
+          currentPage === '/recipes' ? 'bg-pink-500 text-white' : 'bg-pink-300 hover:bg-pink-400 text-gray-800'
+        }`}>
+        Recipes
+      </a>
+    </nav>
+  </div>
+
+  <!-- Bottom semi-transparent part -->
+  <div class="bg-white/75 backdrop-blur-lg border-t border-gray-200 px-6 py-4 rounded-b-lg">
+  </div>
+</header>

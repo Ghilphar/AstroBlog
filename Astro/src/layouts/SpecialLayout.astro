@@ -1,0 +1,31 @@
+---
+import Header from '../components/Header.astro';
+import DropdownMenu from '../components/DropdownMenu.astro';
+const { title, paragraphs = [], thinkings = [] } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <title>{title || 'Special Thinking'}</title>
+  </head>
+  <body class="bg-blue-50 text-gray-800"> <!-- Special Background -->
+    <Header />
+    <DropdownMenu thinkings={thinkings} />
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto p-6 mt-20">
+      <h1 class="text-5xl font-extrabold text-center text-blue-600">{title}</h1>
+      <div class="mt-10">
+        {paragraphs.map((paragraph) => (
+          <div class="mb-8">
+            {paragraph.subtitle && <h2 class="text-3xl font-bold mb-4 text-blue-500">{paragraph.subtitle}</h2>}
+            <p class="text-lg text-gray-700">{paragraph.data}</p>
+          </div>
+        ))}
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>

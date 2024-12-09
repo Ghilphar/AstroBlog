@@ -1,0 +1,23 @@
+---
+import ThinkingsLayout from '../layouts/ThinkingsLayout.astro';
+import { thinkings } from '../data/thinkings';
+---
+
+<ThinkingsLayout thinkings={thinkings}>
+  <h1 class="text-4xl font-bold mb-6">Thinkings</h1>
+  <p class="mb-6 text-gray-700">Explore my thoughts and ideas below:</p>
+  
+  <ul class="space-y-6">
+    {thinkings.map((thinking) => (
+      <li class="border-b border-gray-300 pb-4">
+        <a 
+          href={`/thinkings/${thinking.slug}`} 
+          class="block text-2xl font-semibold text-pink-600 hover:text-pink-700 hover:underline"
+        >
+          {thinking.title}
+        </a>
+        <p class="text-gray-600">{thinking.description}</p>
+      </li>
+    ))}
+  </ul>
+</ThinkingsLayout>
