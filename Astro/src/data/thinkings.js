@@ -8,15 +8,15 @@ export const thinkings = [
         "data": "Nous sommes ici, en ce moment même, tous réunis. Ce moment que l'on appelle le présent est des plus étranges. Il nous réunit tous par notre incapacité à lui échapper."
       },
       {
-        "subtitle": "Une étoile lointaine, brillante mais peut-être inaccessible.",
+        "subtitle": "",
         "data": "On peut s'imaginer dans un certain futur qui serait des plus merveilleux ou des plus atroces ; cette projection se construit dans notre pensée. Certains diront qu'on peut la contrôler, d'autres qu'il faut utiliser nos capacités abstraites de projection pour la prédire. Cependant, ce moment n'est pas encore arrivé et n'arrivera peut-être jamais."
       },
       {
-        "subtitle": "Un reflet sur une eau trouble.",
+        "subtitle": "",
         "data": "On peut se remémorer nos instants passés. Cette vision du passé n'est pas plus exacte : nos souvenirs nous trompent. Ce dont je me souviens était-il exact ? Me suis-je trompé ? On peut se souvenir d'un même instant que nous avons vécu mutuellement, au même endroit, au même moment, et pourtant ne pas en avoir le même souvenir. Ces instants du passé nous séparent, car nous ne les partageons pas."
       },
       {
-        "subtitle": "Le temps d'une inspiration",
+        "subtitle": "",
         "data": "Mais en cet instant précis, nous avons la capacité de le partager. On peut, dans le présent, faire remarquer à l'autre l'état dans lequel il se trouve, les yeux rivés sur des mots qu'il a choisi de prendre le temps de lire. Attentif aux pensées passées de quelqu'un qui lui souhaite un meilleur futur."
       }
     ],
