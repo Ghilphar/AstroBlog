@@ -50,5 +50,37 @@ export const thinkings = [
     ],
     "description": "Une premiere fois à deux.",
     "layout": "special"
-  }
+  },
+      {
+      "title": "La perception de soi : entre le reflet des autres et le regard intérieur",
+      "slug": "thinkings-2-perception-de-soi",
+      "paragraphs": [
+        {
+          "subtitle": "",
+          "data": "Notre perception de nous-mêmes se trouve souvent prise entre deux pôles : la vision que nous entretenons sur notre propre personne et celle que les autres projettent sur nous. Ces deux regards, intimement liés, peuvent influer profondément sur notre estime de soi, notre bonheur et notre capacité à avancer dans la vie avec sérénité. Comment trouver un équilibre entre ces influences pour vivre plus pleinement et s’aimer de façon plus authentique ?"
+        },
+        {
+          "subtitle": "Soumission à un point de vue extérieur ou idéal interne",
+          "data": "Il arrive que nous adoptions la vision que d’autres ont de nous sans véritable remise en question. Que ce soient les attentes de la société, les opinions d’amis, de collègues ou de membres de la famille, chacun porte un jugement qui peut s’ancrer dans notre conscience. À force, nous risquons de considérer cette image comme une vérité absolue, un point de référence immuable. De même, notre propre idéal, souvent forgé par des normes externes ou par un perfectionnisme intérieur, peut nous emprisonner. On cherche à se conformer à cette idée de qui nous « devrions » être, et tout écart entre la réalité et cet idéal provoque frustration, culpabilité et un profond sentiment d’insuffisance."
+        },
+        {
+          "subtitle": "Les conséquences de l’asservissement à une vision figée",
+          "data": "Se soumettre aveuglément à un point de vue – qu’il soit interne ou externe – peut engendrer un mal-être persistant. On vit dans l’attente de devenir un autre soi-même, plus accompli, plus « parfait », sans jamais apprécier pleinement qui l’on est aujourd’hui. Cette insatisfaction perpétuelle érode la confiance en soi. Ainsi, vivre uniquement dans le regard des autres ou dans la poursuite d’un idéal inaccessible empêche d’éprouver un bonheur authentique. Cela revient à se condamner à ne jamais être « assez » : jamais assez doué, assez beau, assez intéressant."
+        },
+        {
+          "subtitle": "Une autre voie : la bienveillance envers soi-même",
+          "data": "Il existe toutefois une alternative plus équilibrée. Plutôt que de renier l’existence des pensées négatives ou des défauts qui nous caractérisent, il s’agit de les accueillir avec compréhension et compassion. Cette posture vise à reconnaître les imperfections pour ce qu’elles sont : des traits humains, ni plus, ni moins. Nous pouvons contempler ce que nous sommes, sans parti pris, sans jugement acharné. Loin de l’autodénigrement, il s’agit d’apprendre à se voir avec pitié au sens noble du terme, c’est-à-dire avec une tendresse lucide. On cesse alors d’exiger une perfection inatteignable et l’on perçoit ses progrès : les défauts d’hier corrigés, l’évolution lente mais réelle, la volonté de s’améliorer."
+        },
+        {
+          "subtitle": "Un équilibre à construire dans le temps",
+          "data": "Cette approche implique de naviguer entre la conscience de ce que les autres pensent de nous et l’exigence d’un idéal, sans en être l’esclave. Il ne s’agit pas de renoncer à l’amélioration personnelle, mais de la considérer comme un cheminement, plutôt qu’un état final. Cette vision plus nuancée permet d’accepter la coexistence des faiblesses et des forces, d’intégrer la critique constructive sans en faire un étendard, et de célébrer chaque avancée, même modeste."
+        },
+        {
+          "subtitle": "",
+          "data": "En fin de compte, parvenir à se percevoir tel que l’on est réellement – un être en devenir, imparfait, mais capable de s’élever – ouvre la voie à un bonheur plus profond. C’est accepter d’être humain, avec nos fêlures, nos aspirations et cette formidable capacité à évoluer. Quand nous laissons de côté la tyrannie de l’idéal et le poids de l’opinion d’autrui, nous trouvons enfin un espace intérieur où l’amour et la tendresse envers soi-même peuvent s’épanouir."
+        }
+      ],
+      "description": "Réflexion sur la perception de soi, entre l'idéal et la vision d'autrui.",
+      "layout": "special"
+    }
 ];
