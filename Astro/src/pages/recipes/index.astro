@@ -1,0 +1,21 @@
+---
+import RecipesLayout from '../../layouts/RecipesLayout.astro';
+import { recipes } from '../../data/recipes';
+---
+
+<RecipesLayout recipes={recipes} title="Recipes">
+  <p class="mb-6 text-gray-700">Explore my favorite recipes below:</p>
+  <ul class="space-y-6">
+    {recipes.map((recipe) => (
+      <li class="border-b border-gray-300 pb-4">
+        <a 
+          href={`/recipes/${recipe.slug}`} 
+          class="block text-2xl font-semibold text-pink-600 hover:text-pink-700 hover:underline"
+        >
+          {recipe.title}
+        </a>
+        <p class="text-gray-600">{recipe.description}</p>
+      </li>
+    ))}
+  </ul>
+</RecipesLayout>

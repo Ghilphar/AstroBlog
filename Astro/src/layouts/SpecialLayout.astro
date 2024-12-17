@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import DropdownMenu from '../components/DropdownMenu.astro';
 const { title, paragraphs = [], thinkings = [] } = Astro.props;
 ---
@@ -27,5 +28,6 @@ const { title, paragraphs = [], thinkings = [] } = Astro.props;
         <slot />
       </div>
     </div>
+    <Footer />
   </body>
 </html>

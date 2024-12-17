@@ -1,0 +1,17 @@
+---
+import RecipesLayout from '../../layouts/RecipesLayout.astro';
+import { recipes } from '../../data/recipes';
+
+export async function getStaticPaths() {
+  return recipes.map((recipe) => ({
+    params: { slug: recipe.slug },
+    props: { recipe },
+  }));
+}
+
+const { recipe } = Astro.props;
+---
+
+<RecipesLayout recipes={recipes} title={recipe.title}>
+  <p class="text-lg text-gray-700">{recipe.description}</p>
+</RecipesLayout>
