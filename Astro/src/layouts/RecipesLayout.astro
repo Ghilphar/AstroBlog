@@ -1,8 +1,8 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import DropdownMenu from '../components/DropdownMenu.astro';
-const { title, recipes = [] } = Astro.props; // Destructure recipes dynamically
+import RecipesDropdownMenu from '../components/RecipesDropdownMenu.astro';
+const { title, ingredients, steps, image, recipes } = Astro.props;
 ---
 
 <html lang="en">
@@ -10,65 +10,37 @@ const { title, recipes = [] } = Astro.props; // Destructure recipes dynamically
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="/src/styles/global.css" />
-    <title>{title || 'Recipes'}</title>
+    <title>{title}</title>
   </head>
-  <body class="bg-pink-50 text-gray-800"> <!-- Light pink background for recipe pages -->
+  <body class="bg-gray-50 text-gray-800">
     <Header />
-
-    <!-- Dropdown Menu -->
-    <div class="relative">
-      <div class="absolute top-6 left-6">
-        <div class="relative">
-          <button 
-            id="dropdownButton"
-            class="bg-pink-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-pink-600"
-          >
-            Browse Recipes
-          </button>
-          <div 
-            id="dropdownMenu"
-            class="hidden absolute mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-10"
-          >
-            <ul class="divide-y divide-gray-200">
-              {recipes.map((recipe) => (
-                <li>
-                  <a 
-                    href={`/recipes/${recipe.slug}`} 
-                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    {recipe.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Content -->
+    <RecipesDropdownMenu recipes={recipes} />
     <div class="max-w-6xl mx-auto p-4 mt-20">
       <h1 class="text-4xl font-bold mb-6">{title}</h1>
+      <div class="grid grid-cols-2 gap-4">
+        <!-- 1st row split in 2 columns -->
+        <!-- List of ingredients -->
+        <ul class="col-span-1">
+          <li class="text-2xl font-semibold text-pink-600">Ingredients</li>
+          {ingredients.map((ingredient) => (
+            <li class="text-gray-600">{ingredient}</li>
+          ))}
+        </ul>
+        <!-- Image -->
+        <img class="col-span-1" src={image} alt="Recipe" />
+        <!-- 2nd row -->
+        <!-- List of steps with summary -->
+        <div class="col-span-2 mt-4">
+          <p class="text-2xl font-semibold text-pink-600">Steps</p>
+          <ol class="list-decimal list-inside">
+            {steps.map((step) => (
+              <li class="text-gray-600">{step}</li>
+            ))}
+          </ol>
+        </div>  
+      </div>
       <slot />
     </div>
-
-    <!-- Dropdown Toggle Script -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const dropdownButton = document.getElementById('dropdownButton');
-        const dropdownMenu = document.getElementById('dropdownMenu');
-
-        dropdownButton.addEventListener('click', () => {
-          dropdownMenu.classList.toggle('hidden');
-        });
-
-        document.addEventListener('click', (event) => {
-          if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.classList.add('hidden');
-          }
-        });
-      });
-    </script>
     <Footer />
   </body>
 </html>

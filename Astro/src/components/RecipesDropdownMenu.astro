@@ -1,0 +1,38 @@
+---
+const { recipes } = Astro.props;
+---
+
+<div class="relative">
+  <button id="recipesDropdownButton" class="bg-pink-600 text-white px-4 py-2 rounded">
+    Browse Recipes
+  </button>
+  <div id="recipesDropdownMenu" class="absolute bg-white border border-gray-300 rounded mt-2 hidden">
+    <ul class="py-2">
+      {recipes.map((recipe) => (
+        <li key={recipe.slug} class="px-4 py-2 hover:bg-gray-100">
+          <a href={`/recipes/${recipe.slug}`} class="block text-gray-700">
+            {recipe.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdownButton = document.getElementById('recipesDropdownButton');
+      const dropdownMenu = document.getElementById('recipesDropdownMenu');
+
+      dropdownButton.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hidden');
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+          dropdownMenu.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</div>
